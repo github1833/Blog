@@ -7,11 +7,19 @@
   </head>
   <body>
     发送到发多少分111
+    <div id="root"></div>
   </body>
   <script>
-    fetch("https://baidu.com").
-      then(data=>{
-        console.log(data);
-      })
+    fetch("https://baidu.com").then((data) => {
+      console.log(data);
+    });
+
+    setTimeout(() => {
+      fetch("https://baidu.com").then((data) => {
+        document.getElementById("root").textContent = data
+      });
+    }, 5000);
   </script>
+
+  <script src=".test.js"></script>
 </html>
